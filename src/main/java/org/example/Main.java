@@ -1,20 +1,21 @@
 package org.example;
 
 import org.example.model.Client;
-import org.example.view.InterfaceApp;
-import org.example.view.LoginAccount;
+import org.example.service.ClientService;
+import org.example.view.ClientView;
 
 import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        LoginAccount loginAccount = new LoginAccount();
-        InterfaceApp interfaceApp = new InterfaceApp();
+        ClientService clientService = new ClientService();
+        ClientView clientView = new ClientView();
+        Scanner scanner = new Scanner(System.in);
 
 
-        Client client = loginAccount.LoginClient();
-        interfaceApp.Menu(client);
-
+        Client client = clientService.Login(scanner.nextLine());
+        clientView.Menu(client);
+        clientService.ExitingTheApp();
     }
 }
