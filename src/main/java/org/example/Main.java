@@ -11,10 +11,8 @@ public class Main {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         ClientService clientService = new ClientService();
         ClientView clientView = new ClientView();
-        Scanner scanner = new Scanner(System.in);
 
-
-        Client client = clientService.Login(scanner.nextLine());
+        Client client = clientView.LoginClient();
         clientView.Menu(client);
         clientService.ExitingTheApp();
     }

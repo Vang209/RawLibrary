@@ -59,15 +59,15 @@ public class ClientView {
                 numberCommand = scanner.nextInt();
 
                 if (numberCommand == 2) {
-                    clientService.BookList();
+                    bookView.BookList();
                 } else if (numberCommand == 3) {
-                    clientService.GenreList();
+                    bookView.GenreList();
                 } else if (numberCommand == 4) {
-                    clientService.ClientList();
+                    bookView.ClientList();
                 } else if (numberCommand == 5) {
                     MyBook(client);
                 } else if (numberCommand == 6) {
-                    clientService.LogList();
+                    bookView.LogList();
                 }
             }
         }
