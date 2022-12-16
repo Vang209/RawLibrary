@@ -1,16 +1,15 @@
 package org.example.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 import java.util.UUID;
 
 public class Log implements Serializable {
     private Book book;
     private UUID clientId;
     private String takeOrReturned;
-    private Date date;
+    private Calendar calendar;
 
 
     @Override
@@ -19,15 +18,15 @@ public class Log implements Serializable {
                 "book=" + book +
                 ", clientId=" + clientId +
                 ", takeOrReturned='" + takeOrReturned + '\'' +
-                ", date=" + date +
+                ", date=" + calendar +
                 '}';
     }
 
-    public Log(Book book, UUID clientId, String takeOrReturned, Date date){
+    public Log(Book book, UUID clientId, String takeOrReturned, Calendar calendar){
         this.book = book;
         this.clientId = clientId;
         this.takeOrReturned = takeOrReturned;
-        this.date = date;
+        this.calendar = calendar;
     }
 
     public String getTakeOrReturned() {
@@ -53,11 +52,12 @@ public class Log implements Serializable {
     public void setBook(Book book) {
         this.book = book;
     }
-    public Date getDate() {
-        return date;
+
+    public Calendar getCalendar() {
+        return calendar;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setCalendar(Calendar calendar) {
+        this.calendar = calendar;
     }
 }

@@ -4,7 +4,7 @@ import org.example.model.Book;
 import org.example.model.Client;
 import org.example.model.Log;
 import org.example.repository.BookRepository;
-import org.example.repository.LogList;
+import org.example.repository.LogRepository;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -21,7 +21,7 @@ public class BookService {
 //                System.out.println("Да, у нас есть такая книга, мы добавили ее в ваш раздел 'Мои книги'");
                 BookRepository.books.get(i).setId(client.getUuid());
                 Date date = new Date();
-                LogList.logs.add(new Log(BookRepository.books.get(i), client.getUuid(), "Взял", date));
+                LogRepository.logs.add(new Log(BookRepository.books.get(i), client.getUuid(), "Взял", date));
             }
         }
         if (numberOfBooks == 0) {
@@ -34,7 +34,7 @@ public class BookService {
         for (int i = 0; i < BookRepository.books.size(); i++) {
             if (clientBook.equals(BookRepository.books.get(i)) && client.getUuid().equals(BookRepository.books.get(i).getId())) {
                 Date date = new Date();
-                LogList.logs.add(new Log(BookRepository.books.get(i), client.getUuid(), "Вернул", date));
+                LogRepository.logs.add(new Log(BookRepository.books.get(i), client.getUuid(), "Вернул", date));
                 BookRepository.books.get(i).setId(null);
             }
         }

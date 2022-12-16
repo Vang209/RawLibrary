@@ -5,7 +5,6 @@ import org.example.model.Client;
 import org.example.model.Genre;
 import org.example.repository.BookRepository;
 import org.example.repository.ClientRepository;
-import org.example.repository.LogList;
 
 import java.util.Scanner;
 
@@ -33,11 +32,6 @@ public class BookView {
     public void ClientList(){
         for (int i = 0; i< ClientRepository.clients.size(); i++){
             System.out.println(ClientRepository.clients.get(i));
-        }
-    }
-    public void LogList(){
-        for(int i = 0; i< LogList.logs.size(); i++){
-            System.out.println(LogList.logs.get(i));
         }
     }
     public void GenreList(){

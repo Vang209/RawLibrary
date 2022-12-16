@@ -1,11 +1,10 @@
 package org.example.service;
 
 import org.example.model.Client;
-import org.example.model.Genre;
 import org.example.repository.BookRepository;
 import org.example.repository.ClientRepository;
 import org.example.repository.Domain;
-import org.example.repository.LogList;
+import org.example.repository.LogRepository;
 
 import java.io.IOException;
 
@@ -29,6 +28,6 @@ public class ClientService {
         //                System.out.println("У нас нет такого пользователя");
     }
     public void ExitingTheApp() throws IOException {
-        Domain.WriteFile(BookRepository.books, ClientRepository.clients, LogList.logs);
+        Domain.WriteFile(BookRepository.books, ClientRepository.clients, LogRepository.logs);
     }
 }

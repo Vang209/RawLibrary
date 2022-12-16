@@ -21,7 +21,7 @@ public class Domain implements Serializable {
 
         BookRepository.books = domainRead.getBookList();
         ClientRepository.clients = domainRead.getClientList();
-        LogList.logs = domainRead.getLogList();
+        LogRepository.logs = domainRead.getLogList();
     }
 
     public static void WriteFile(List<Book> books, List<Client> clients, List<Log> logs) throws IOException {

@@ -5,7 +5,7 @@ import org.example.model.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LogList {
+public class LogRepository {
     public static List<Log> logs = new ArrayList<>();
 
 
@@ -13,6 +13,6 @@ public class LogList {
         return logs;
     }
     public static void setLogs(List<Log> logs) {
-        LogList.logs = logs;
+        LogRepository.logs = logs;
     }
 }
