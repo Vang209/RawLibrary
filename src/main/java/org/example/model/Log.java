@@ -1,6 +1,7 @@
 package org.example.model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
@@ -9,7 +10,7 @@ public class Log implements Serializable {
     private Book book;
     private UUID clientId;
     private String takeOrReturned;
-    private Calendar calendar;
+    private LocalDate date;
 
 
     @Override
@@ -18,15 +19,15 @@ public class Log implements Serializable {
                 "book=" + book +
                 ", clientId=" + clientId +
                 ", takeOrReturned='" + takeOrReturned + '\'' +
-                ", date=" + calendar +
+                ", date=" + date +
                 '}';
     }
 
-    public Log(Book book, UUID clientId, String takeOrReturned, Calendar calendar){
+    public Log(Book book, UUID clientId, String takeOrReturned, LocalDate date){
         this.book = book;
         this.clientId = clientId;
         this.takeOrReturned = takeOrReturned;
-        this.calendar = calendar;
+        this.date = date;
     }
 
     public String getTakeOrReturned() {
@@ -53,11 +54,11 @@ public class Log implements Serializable {
         this.book = book;
     }
 
-    public Calendar getCalendar() {
-        return calendar;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public void setCalendar(Calendar calendar) {
-        this.calendar = calendar;
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 }
