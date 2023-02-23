@@ -7,7 +7,11 @@ public class Client implements Serializable {
 
 
     UUID uuid = UUID.randomUUID();
+
+
     public String nameClient;
+    public String getNameClient() {return nameClient;}
+
     public UUID getUuid(){return uuid;}
     public void setUuid(UUID uuid) {this.uuid = uuid;}
 

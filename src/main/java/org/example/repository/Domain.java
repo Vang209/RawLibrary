@@ -24,12 +24,12 @@ public class Domain implements Serializable {
         LogRepository.logs = domainRead.getLogList();
     }
 
-    public static void WriteFile(List<Book> books, List<Client> clients, List<Log> logs) throws IOException {
-        FileOutputStream fos = new FileOutputStream("Domain.bin");
-        ObjectOutputStream oos = new ObjectOutputStream(fos);
-        DomainModel domain = new DomainModel(books, clients, logs);
-        oos.writeObject(domain);
-        oos.close();
-        fos.close();
-    }
+//    public static void WriteFile(List<Book> books, List<Client> clients, List<Log> logs) throws IOException {
+//        FileOutputStream fos = new FileOutputStream("Domain.bin");
+//        ObjectOutputStream oos = new ObjectOutputStream(fos);
+//        DomainModel domain = new DomainModel(books, clients, logs);
+//        oos.writeObject(domain);
+//        oos.close();
+//        fos.close();
+//    }
 }

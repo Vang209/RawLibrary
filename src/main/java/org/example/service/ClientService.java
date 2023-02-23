@@ -10,24 +10,15 @@ import java.io.IOException;
 
 public class ClientService {
 
-
-
-    public Client Login(String nameClient) throws IOException, ClassNotFoundException {
-        Client client = new Client("");
-        for(int i = 0; i< ClientRepository.getClients().size(); i++){
-            if(nameClient.equals(ClientRepository.getClients().get(i))){
-//                System.out.println("Вы авторизовались, добро пожаловать, "+nameClient);
-                client = ClientRepository.getClients().get(i);
-                Domain.ReadFile();
-                break;
+    public Client Login(String nameClient){
+        System.out.println("Проверка клиента...");
+        for (int i=0;i<ClientRepository.clients.size();i++){
+            if(ClientRepository.clients.get(i).getNameClient().equals(nameClient)){
+                System.out.println("Добро пожаловать "+nameClient);
+                return ClientRepository.clients.get(i);
             }
         }
-        if(client != null){
-            return client;
-        } else return null;
-        //                System.out.println("У нас нет такого пользователя");
-    }
-    public void ExitingTheApp() throws IOException {
-        Domain.WriteFile(BookRepository.books, ClientRepository.clients, LogRepository.logs);
+        System.out.println("Нам не удолось найти такого пользователя :(");
+        return null;
     }
 }

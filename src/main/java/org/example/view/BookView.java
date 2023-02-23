@@ -26,12 +26,12 @@ public class BookView {
     }
     public void BookList(){
         for (int i = 0; i< BookRepository.books.size(); i++){
-            System.out.println(BookRepository.books.get(i));
+            System.out.println(BookRepository.books.get(i).getGenre().getTitleGenre()+" "+BookRepository.books.get(i).getTitle()+" "+BookRepository.books.get(i).getAuthor());
         }
     }
     public void ClientList(){
         for (int i = 0; i< ClientRepository.clients.size(); i++){
-            System.out.println(ClientRepository.clients.get(i));
+            System.out.println(ClientRepository.clients.get(i).getNameClient());
         }
     }
     public void GenreList(){

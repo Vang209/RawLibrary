@@ -7,7 +7,6 @@ import org.example.service.ClientService;
 import org.example.service.LogService;
 
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class ClientView {
@@ -40,10 +39,9 @@ public class ClientView {
 
 
     public void Menu(Client client){
+        System.out.println("Нажмите '1' для начала работы");
         Scanner scanner = new Scanner(System.in);
         int numberCommand = scanner.nextInt();
-        LogService logService = new LogService();
-
 
         System.out.println("Пожалуйста ввидите номер команды");
 
@@ -75,12 +73,11 @@ public class ClientView {
         }
     }
 
-    public Client LoginClient() throws IOException, ClassNotFoundException {
+    public void LoginClient(){
         System.out.println("Пожалуйста авторизуйтесь");
         Scanner scanner = new Scanner(System.in);
         String clientString = scanner.nextLine();
-
-        return clientService.Login(clientString);
+        Menu(clientService.Login(clientString));
     }
 
     public void LogMenu(){
@@ -107,8 +104,4 @@ public class ClientView {
             logService.LogTheYear();
         }
     }
-
-
-
-
 }
